@@ -21,7 +21,7 @@ def generate_summary(results_df):
     response = model.generate_content(prompt)
     return response.text
 
-def suggest_improvments(results_df):
+def suggest_improvements(results_df):
     prompt = f'''You are a data scientist expert
     Here are the model results:
     
