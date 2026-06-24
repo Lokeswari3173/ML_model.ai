@@ -50,7 +50,7 @@ if file:
         
         # Encoding
         x = pd.get_dummies(x,columns=cat_cols,drop_first=True,dtype=int)
-        
+        x = x.fillna(0)
         if y.dtype == 'object':
             le = LabelEncoder()
             y = le.fit_transform(y)
@@ -74,7 +74,7 @@ if file:
         
         for i in xtrain.columns:
             xtrain[i] = scaler.fit_transform(xtrain[[i]])
-            xtest[i] = scaler.fit_transform(xtest[[i]])
+            xtest[i] = scaler.transform(xtest[[i]])
             
             # ============
             # Model
