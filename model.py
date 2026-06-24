@@ -54,13 +54,17 @@ if file:
         if y.dtype == 'object':
             le = LabelEncoder()
             y = le.fit_transform(y)
-            
-            
-        # Detect the problem type
-        if df[target].dtype == 'object' or len(np.unique(y)) < 15:
+          
+          # Detect the problem type
+        if df[target].dtype == 'object':
+            problem_type = 'Classification'
+        elif len(np.unique(y)) < 15:
             problem_type = 'Classification'
         else:
             problem_type = 'Regression'
+        st.write("Target dtype:", df[target].dtype)
+        st.write("Unique values:", len(np.unique(y)))
+            
         
         st.write(f'### Problem type:{problem_type} ⚡')
         
