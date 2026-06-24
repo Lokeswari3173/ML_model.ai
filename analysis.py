@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-key = os.getenv('GOOGLE_API_KEY')
+key = st.secrets["GOOGLE_API_KEY"]
 
 genai.configure(api_key = key)
 model = genai.GenerativeModel('gemini-2.5-flash')
