@@ -16,7 +16,7 @@ from sklearn.metrics import (mean_squared_error, r2_score,
                              f1_score, precision_score)
 
 # for AI 
-from analysis import generate_summary, suggest_improvments
+from analysis import generate_summary, suggest_improvements
 st.set_page_config('📊 ML & AI insights')
 
 st.title('Auto ML + AI Insights App🤖🧠🇦🇮👾')
@@ -130,7 +130,7 @@ if file:
             st.write(summary)
             
         if st.button(':blue[Suggest Improvements💡]'):
-            improve = suggest_improvments(results_df)
+            improve = suggest_improvements(results_df)
             st.write(improve)
             
         
